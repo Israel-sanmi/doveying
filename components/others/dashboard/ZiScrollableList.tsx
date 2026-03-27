@@ -13,7 +13,7 @@ interface ListItem {
   extra?: string;
   avatar?: string;
   fallback?: string;
-  variant?: "success" | "warning" | "default";
+  variant?: "success" | "warning" | "default" | "destructive";
 }
 
 interface ZiScrollableListProps {
@@ -80,7 +80,9 @@ const ZiScrollableList = ({
                         ? "bg-main/10 text-main border border-main/20"
                         : item.variant === "warning"
                           ? "bg-amber-50 text-amber-600 border border-amber-100"
-                          : "bg-slate-50 text-slate-500 border border-slate-100",
+                          : item.variant === "destructive"
+                            ? "bg-red-50 text-red-600 border border-red-100"
+                            : "bg-slate-50 text-slate-500 border border-slate-100",
                     )}
                   >
                     {item.extra}

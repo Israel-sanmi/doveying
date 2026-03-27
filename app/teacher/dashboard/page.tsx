@@ -30,13 +30,25 @@ const birthdays = [
     extra: "12 Nov",
   },
   { id: 3, title: "Ebuka Ani", subtitle: "U15 ZA • Friday", extra: "14 Nov" },
+  {
+    id: 4,
+    title: "Sara Johnson",
+    subtitle: "U14 BC • Saturday",
+    extra: "15 Nov",
+  },
+  {
+    id: 5,
+    title: "David Chen",
+    subtitle: "U15 AA • Sunday",
+    extra: "16 Nov",
+  },
 ];
 
 const topPerformers = [
   {
     id: 101,
     title: "Amara Okoro",
-    subtitle: "Academic Excellance",
+    subtitle: "Academic Excellence",
     extra: "98%",
     variant: "success" as const,
   },
@@ -54,22 +66,92 @@ const topPerformers = [
     extra: "100%",
     variant: "success" as const,
   },
+  {
+    id: 104,
+    title: "Ikechukwu Okafor",
+    subtitle: "Mathematics",
+    extra: "95%",
+    variant: "success" as const,
+  },
+  {
+    id: 105,
+    title: "Fatima Yusuf",
+    subtitle: "Creative Arts",
+    extra: "A+",
+    variant: "success" as const,
+  },
+];
+
+const needsAttention = [
+  {
+    id: 201,
+    title: "Oluwatobi Ade",
+    subtitle: "Low Attendance",
+    extra: "65%",
+    variant: "destructive" as const,
+  },
+  {
+    id: 202,
+    title: "Chinaza Obi",
+    subtitle: "Missing Test 3",
+    extra: "Late",
+    variant: "warning" as const,
+  },
+  {
+    id: 203,
+    title: "Musa Ibrahim",
+    subtitle: "Behavioral Alert",
+    extra: "Alert",
+    variant: "destructive" as const,
+  },
+  {
+    id: 204,
+    title: "Grace Akpan",
+    subtitle: "Performance Drop",
+    extra: "-15%",
+    variant: "warning" as const,
+  },
 ];
 
 const attendanceData = [
-  { label: "Mon", value: 92 },
-  { label: "Tue", value: 88 },
-  { label: "Wed", value: 95 },
-  { label: "Thu", value: 85, highlight: true },
-  { label: "Fri", value: 90 },
+  { label: "Oct 25", value: 85 },
+  { label: "Oct 26", value: 88 },
+  { label: "Oct 27", value: 92 },
+  { label: "Oct 28", value: 90 },
+  { label: "Oct 29", value: 84 },
+  { label: "Nov 01", value: 95 },
+  { label: "Nov 02", value: 91 },
+  { label: "Nov 03", value: 89 },
+  { label: "Nov 04", value: 87 },
+  { label: "Nov 05", value: 93 },
+  { label: "Nov 08", value: 82 },
+  { label: "Nov 09", value: 94 },
+  { label: "Nov 10", value: 89 },
+  { label: "Nov 11", value: 96, highlight: true },
+  { label: "Nov 12", value: 91 },
+  { label: "Nov 15", value: 88 },
+  { label: "Nov 16", value: 90 },
+  { label: "Nov 17", value: 93 },
+  { label: "Nov 18", value: 85 },
+  { label: "Nov 19", value: 92 },
 ];
 
 const assessmentData = [
-  { label: "Test 1", value: 75 },
-  { label: "Test 2", value: 82 },
-  { label: "Test 3", value: 68 },
-  { label: "Test 4", value: 91 },
-  { label: "Test 5", value: 85, highlight: true },
+  { label: "Asmt 01", value: 75 },
+  { label: "Asmt 02", value: 82 },
+  { label: "Asmt 03", value: 68 },
+  { label: "Asmt 04", value: 91 },
+  { label: "Asmt 05", value: 78 },
+  { label: "Asmt 06", value: 85 },
+  { label: "Asmt 07", value: 94 },
+  { label: "Asmt 08", value: 88, highlight: true },
+  { label: "Asmt 09", value: 72 },
+  { label: "Asmt 10", value: 80 },
+  { label: "Asmt 11", value: 95 },
+  { label: "Asmt 12", value: 86 },
+  { label: "Asmt 13", value: 79 },
+  { label: "Asmt 14", value: 83 },
+  { label: "Asmt 15", value: 91 },
 ];
 
 const TeacherDashboard = () => {
@@ -156,17 +238,21 @@ const TeacherDashboard = () => {
             </div>
           </div> */}
 
-          <ZiScrollableList title="Upcoming Birthdays" items={birthdays} />
+          <ZiScrollableList
+            title="Upcoming Birthdays"
+            maxHeight="max-h-[221px]"
+            items={birthdays}
+          />
 
           <ZiScrollableList
             title="Top Performers"
             items={topPerformers}
-            maxHeight="max-h-[350px]"
+            maxHeight="max-h-[221px]"
           />
           <ZiScrollableList
             title="Needs Attention"
-            items={topPerformers}
-            maxHeight="max-h-[350px]"
+            items={needsAttention}
+            maxHeight="max-h-[221px]"
           />
         </div>
       </div>
