@@ -3,7 +3,21 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, ChevronRight } from "lucide-react";
+import { 
+  LayoutDashboard, 
+  ChevronRight,
+  GraduationCap,
+  BookOpen,
+  FileText,
+  Globe,
+  Activity,
+  DollarSign,
+  BarChart3,
+  Users,
+  Settings,
+  Monitor,
+  Ticket
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -26,8 +40,7 @@ import {
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
 import DashboardHeader from "./DashboardHeader";
-import { HiAcademicCap, HiOutlineAcademicCap } from "react-icons/hi";
-import { BiSpreadsheet } from "react-icons/bi";
+// Removed hi and bi icons for consistency with lucide-react
 
 const navItems = [
   {
@@ -38,13 +51,121 @@ const navItems = [
   {
     title: "Academics",
     url: "/teacher/academics",
-    icon: HiOutlineAcademicCap,
+    icon: GraduationCap,
+    items: [
+      { title: "Classes", url: "/teacher/academics/classes" },
+      { title: "Students", url: "/teacher/academics/students" },
+    ],
   },
   {
     title: "Curriculum",
     url: "/teacher/curriculum",
-    icon: BiSpreadsheet,
-    items: [{ title: "Lesson Plans", url: "/teacher/curriculum/lessons" }],
+    icon: BookOpen,
+    items: [
+      { title: "Lessons", url: "/teacher/curriculum/lessons" },
+      { title: "Pedagogy AI", url: "/teacher/curriculum/pedagogy-ai" },
+    ],
+  },
+  {
+    title: "Exams",
+    url: "/teacher/exams",
+    icon: FileText,
+    items: [
+      { title: "Manage Exams", url: "/teacher/exams/manage" },
+      { title: "All Exams", url: "/teacher/exams/all" },
+      { title: "Pending Results", url: "/teacher/exams/pending-results" },
+      { title: "Declared Results", url: "/teacher/exams/declared-results" },
+    ],
+  },
+  {
+    title: "IELTS",
+    url: "/teacher/ielts",
+    icon: Globe,
+    items: [
+      { title: "IELTS Module", url: "/teacher/ielts/module" },
+      { title: "All Mock Tests", url: "/teacher/ielts/mock-tests" },
+      { title: "Create New Test", url: "/teacher/ielts/create-test" },
+      { title: "Student Results", url: "/teacher/ielts/results" },
+    ],
+  },
+  {
+    title: "Operations",
+    url: "/teacher/operations",
+    icon: Activity,
+    items: [
+      { title: "Health", url: "/teacher/operations/health" },
+      { title: "Attendance", url: "/teacher/operations/attendance" },
+      { title: "Live Monitoring", url: "/teacher/operations/live-monitoring" },
+    ],
+  },
+  {
+    title: "Finance",
+    url: "/teacher/finance",
+    icon: DollarSign,
+    items: [
+      { title: "Payments", url: "/teacher/finance/payments" },
+      { title: "Pending Payments", url: "/teacher/finance/pending" },
+      { title: "Successful Payments", url: "/teacher/finance/successful" },
+      { title: "Rejected Payments", url: "/teacher/finance/rejected" },
+      { title: "Initiated Payments", url: "/teacher/finance/initiated" },
+      { title: "All History", url: "/teacher/finance/history" },
+      { title: "Coupons", url: "/teacher/finance/coupons" },
+    ],
+  },
+  {
+    title: "Analytics",
+    url: "/teacher/analytics",
+    icon: BarChart3,
+    items: [
+      { title: "Reports", url: "/teacher/analytics/reports" },
+      { title: "Subscription History", url: "/teacher/analytics/subscriptions" },
+      { title: "Exam History", url: "/teacher/analytics/exams" },
+      { title: "Log History", url: "/teacher/analytics/logs" },
+    ],
+  },
+  {
+    title: "Management",
+    url: "/teacher/management",
+    icon: Users,
+    items: [
+      { title: "Manage Users", url: "/teacher/management/users" },
+      { title: "Support Tickets", url: "/teacher/management/tickets" },
+      { title: "Fees", url: "/teacher/management/fees" },
+    ],
+  },
+  {
+    title: "Settings",
+    url: "/teacher/settings",
+    icon: Settings,
+    items: [
+      { title: "Proctoring", url: "/teacher/settings/proctoring" },
+      { title: "Maintenance", url: "/teacher/settings/maintenance" },
+      { title: "Tools", url: "/teacher/settings/tools" },
+    ],
+  },
+  {
+    title: "CMS Manager",
+    url: "/teacher/cms",
+    icon: Monitor,
+    items: [
+      { title: "Homepage Editor", url: "/teacher/cms/homepage" },
+      { title: "Page Manager", url: "/teacher/cms/pages" },
+      { title: "Menu Manager", url: "/teacher/cms/menus" },
+      { title: "Header Editor", url: "/teacher/cms/header" },
+      { title: "Footer Editor", url: "/teacher/cms/footer" },
+      { title: "Testimonials", url: "/teacher/cms/testimonials" },
+    ],
+  },
+  {
+    title: "Support Tickets",
+    url: "/teacher/support",
+    icon: Ticket,
+    items: [
+      { title: "Pending Tickets", url: "/teacher/support/pending" },
+      { title: "Closed Tickets", url: "/teacher/support/closed" },
+      { title: "Answered Tickets", url: "/teacher/support/answered" },
+      { title: "All Tickets", url: "/teacher/support/all" },
+    ],
   },
 ];
 
